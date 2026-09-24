@@ -1,0 +1,5 @@
+# Robots.txt for Sher Afgan Khan Sawansi Grapes & Fruit Farm
+User-agent: *
+Allow: /
+
+Sitemap: https://sawansifarm.com/sitemap.xml

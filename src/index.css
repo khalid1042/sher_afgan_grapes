@@ -1,0 +1,357 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+:root {
+  /* Design Tokens - Nature & Agriculture Palette */
+  --color-primary-dark: #0f2d1e;
+  --color-primary: #1b4332;
+  --color-primary-light: #2d6a4f;
+  --color-accent-leaf: #40916c;
+  --color-accent-bright: #52b788;
+  --color-accent-soft: #74c69d;
+  --color-accent-mint: #d8f3dc;
+  
+  /* Grape Accent */
+  --color-grape-deep: #4a153b;
+  --color-grape-accent: #7b2cbf;
+  --color-grape-soft: #f3e8f5;
+
+  /* Earth & Neutral Tones */
+  --color-bg-light: #fafbf8;
+  --color-bg-alt: #f1f4ed;
+  --color-card-bg: #ffffff;
+  --color-text-main: #1c2a22;
+  --color-text-muted: #526359;
+  --color-border: #e2e8df;
+
+  /* Glassmorphism & Shadows */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 8px 32px 0 rgba(15, 45, 30, 0.08);
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(15, 45, 30, 0.08);
+  --shadow-lg: 0 12px 32px rgba(15, 45, 30, 0.12);
+  --shadow-xl: 0 20px 48px rgba(15, 45, 30, 0.16);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+
+  /* Transition */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark theme overrides if needed, but primary is natural cream light theme */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--color-text-main);
+  background-color: var(--color-bg-light);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--color-bg-light);
+}
+
+/* Typography Utility */
+h1, h2, h3, h4, .font-serif {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--color-primary-dark);
+  line-height: 1.25;
+}
+
+.heading-display {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Sticky Header Glassmorphism */
+.navbar-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  transition: var(--transition-normal);
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.badge-emerald {
+  background-color: var(--color-accent-mint);
+  color: var(--color-primary-dark);
+  border: 1px solid rgba(64, 145, 108, 0.2);
+}
+
+.badge-grape {
+  background-color: var(--color-grape-soft);
+  color: var(--color-grape-deep);
+  border: 1px solid rgba(123, 44, 191, 0.2);
+}
+
+/* Custom Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.98rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition-normal);
+  border: none;
+  outline: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(27, 67, 50, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(27, 67, 50, 0.35);
+  background: linear-gradient(135deg, var(--color-accent-leaf), var(--color-primary));
+}
+
+.btn-whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+  background: #20ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background: #ffffff;
+  border-color: var(--color-accent-leaf);
+  color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline-white {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Card Component */
+.card-farm {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  padding: 1.75rem;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-farm:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent-soft);
+}
+
+/* Section Spacing */
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* Video Grid Card */
+.video-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #0d1b13;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.video-thumb-wrapper {
+  position: relative;
+  aspect-ratio: 16/9;
+  width: 100%;
+  background-color: #08120c;
+  overflow: hidden;
+}
+
+.video-thumb-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.video-card:hover .play-overlay {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.play-icon-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--color-primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: var(--transition-normal);
+  padding-left: 4px; /* Center play icon visually */
+}
+
+.video-card:hover .play-icon-btn {
+  transform: scale(1.15);
+  background: var(--color-accent-bright);
+  color: #ffffff;
+}
+
+/* Lightbox & Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(8, 28, 21, 0.92);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #25d366;
+  color: #ffffff;
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: var(--transition-normal);
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 36px rgba(37, 211, 102, 0.5);
+}
+
+@media (max-width: 640px) {
+  .whatsapp-float span {
+    display: none;
+  }
+  .whatsapp-float {
+    padding: 1rem;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    border-radius: 50%;
+  }
+}
+
+/* Utility Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+}
+
+.pulse-animation {
+  animation: pulseGlow 2.5s infinite;
+}
