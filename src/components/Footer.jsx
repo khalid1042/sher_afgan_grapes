@@ -102,7 +102,16 @@ export default function Footer() {
             © 2026 {brandName}. All rights reserved.
           </div>
           <div>
-            Cultivated with Care & Tradition
+            Developed by{' '}
+            <a 
+              href="https://www.sntechweb.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ color: '#52b788', fontWeight: '700', textDecoration: 'none', transition: 'var(--transition-fast)' }}
+              className="developer-link"
+            >
+              SN Tech
+            </a>
           </div>
         </div>
 
@@ -112,6 +121,10 @@ export default function Footer() {
         .footer-link-hover:hover {
           color: #52b788 !important;
           padding-left: 4px;
+        }
+        .developer-link:hover {
+          color: #ffffff !important;
+          text-decoration: underline !important;
         }
       `}</style>
     </footer>
